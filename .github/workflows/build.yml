@@ -29,4 +29,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: SpeedHack-Release
-          path: .theos/obj/debug/*.dylib
+          path: |
+            .theos/obj/**/*.dylib
+            .theos/obj/*.dylib
