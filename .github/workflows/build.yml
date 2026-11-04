@@ -16,6 +16,8 @@ jobs:
           brew install ldid xz
 
       - name: Setup Theos
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
           echo "THEOS=~/theos" >> $GITHUB_ENV
@@ -41,7 +43,6 @@ jobs:
       - name: Build Dylib
         run: |
           export THEOS=~/theos
-          # เปลี่ยนจาก make package เป็น make เฉยๆ
           make
 
       - name: Upload Artifact
