@@ -1,0 +1,9 @@
+Package: com.ollie.speedhack
+Name: SpeedHack
+Depends: mobilesubstrate
+Version: 1.0
+Architecture: iphoneos-arm64
+Description: Ad Accelerator
+Maintainer: ollie
+Author: ollie
+Section: Tweaks
