@@ -20,6 +20,24 @@ jobs:
           bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
           echo "THEOS=~/theos" >> $GITHUB_ENV
 
+      - name: Force create plist
+        run: |
+          cat << 'EOF' > SpeedHack.plist
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>Filter</key>
+            <dict>
+              <key>Bundles</key>
+              <array>
+                <string>com.apple.UIKit</string>
+              </array>
+            </dict>
+          </dict>
+          </plist>
+          EOF
+
       - name: Build Dylib
         run: |
           export THEOS=~/theos
