@@ -5,8 +5,8 @@ FINALPACKAGE = 1
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = SpeedHack
-SpeedHack_FILES = Tweak.x
+LIBRARY_NAME = SpeedHack
+SpeedHack_FILES = Tweak.m
 SpeedHack_CFLAGS = -fobjc-arc
 
-include $(THEOS_MAKE_PATH)/tweak.mk
+include $(THEOS_MAKE_PATH)/library.mk
